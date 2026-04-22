@@ -64,3 +64,8 @@ htmlcov/
 
 # Railway
 .railway/
+
+# Frontend environment files
+frontend/.env
+frontend/.env.*
+!.env.example
