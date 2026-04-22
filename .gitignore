@@ -84,3 +84,6 @@ __pycache__/
 # Frontend build
 frontend/build/
 frontend/static/
+__pycache__/
+*.pyc
+railway.json
