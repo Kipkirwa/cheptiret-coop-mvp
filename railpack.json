@@ -1,4 +1,7 @@
 {
+  "packages": {
+    "python": "3.12"
+  },
   "deploy": {
     "startCommand": "gunicorn app.main:app --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT"
   }
