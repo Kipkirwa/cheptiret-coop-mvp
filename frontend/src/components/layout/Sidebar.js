@@ -28,7 +28,6 @@ const drawerWidth = 240;
  
 const menuItems = {
   farmer: [
-    { text: 'Portal',            icon: <HomeIcon />,      path: '/farmer/portal' },
     { text: 'Dashboard',         icon: <DashboardIcon />, path: '/farmer/dashboard' },
     { text: 'Daily Record',      icon: <TodayIcon />,     path: '/farmer/daily' },
     { text: 'Monthly Statement', icon: <MonthlyIcon />,   path: '/farmer/monthly' },
