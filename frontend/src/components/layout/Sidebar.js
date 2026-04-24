@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import {
   Drawer, List, ListItem, ListItemButton, ListItemIcon,
-  ListItemText, Box, Toolbar, Typography,
+  ListItemText, Box, Toolbar, IconButton, Typography,
   Divider, useTheme, useMediaQuery,
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
-  Home as HomeIcon,
   Today as TodayIcon,
   CalendarMonth as MonthlyIcon,
   LocalShipping as TruckIcon,
