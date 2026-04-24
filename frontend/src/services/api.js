@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use the public HTTPS URL
-const API_BASE_URL = 'https://cheptiret-coop-mvp-backend-production.up.railway.app/api';
+const API_BASE_URL = 'https://cheptiret-coop-mvp-backend-production.up.railway.app/api/';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
