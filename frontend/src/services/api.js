@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Hardcoded production URL - temporary fix
-const API_BASE_URL = 'https://cheptiret-coop-mvp-backend-production.up.railway.app/api';
+// Use Railway internal networking (no HTTPS issues)
+const API_BASE_URL = 'http://cheptiret-coop-mvp-backend.railway.internal:8080/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
