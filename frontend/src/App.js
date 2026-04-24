@@ -42,7 +42,7 @@ import DailySummary from './pages/transporters/DailySummary';
 // Shared
 import PrivateRoute from './components/auth/PrivateRoute';
 import NotFound from './components/common/NotFound';
-import ApiTest from './pages/test/ApiTest';
+import ApiTest from './pages/tests/ApiTest';
  
 const theme = createTheme({
   palette: {
