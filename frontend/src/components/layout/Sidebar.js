@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Drawer, List, ListItem, ListItemButton, ListItemIcon,
-  ListItemText, Box, Toolbar, IconButton, Typography,
+  ListItemText, Box, Toolbar, Typography,
   Divider, useTheme, useMediaQuery,
 } from '@mui/material';
 import {
