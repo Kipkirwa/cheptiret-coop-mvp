@@ -42,6 +42,7 @@ import DailySummary from './pages/transporters/DailySummary';
 // Shared
 import PrivateRoute from './components/auth/PrivateRoute';
 import NotFound from './components/common/NotFound';
+import ApiTest from './pages/test/ApiTest';
  
 const theme = createTheme({
   palette: {
@@ -105,6 +106,7 @@ function App() {
                   <Route path="/login/farmer" element={<FarmersLogin />} />
                   <Route path="/login/transporter" element={<TransportersLogin />} />
                   <Route path="/login/admin" element={<AdminLogin />} />
+                  <Route path="/test-api" element={<ApiTest />} />
  
                   {/* Admin Routes */}
                   <Route path="/admin/dashboard" element={
