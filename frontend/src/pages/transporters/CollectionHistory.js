@@ -11,7 +11,6 @@ import {
   Opacity as MilkIcon,
   Refresh as RefreshIcon,
   Download as DownloadIcon,
-  CheckCircle as CheckIcon,
   Sms as SmsIcon,
 } from '@mui/icons-material';
 import { useAuth } from '../../contexts/AuthContext';

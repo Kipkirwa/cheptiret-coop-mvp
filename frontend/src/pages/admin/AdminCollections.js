@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Container,
   Paper,
@@ -14,7 +14,6 @@ import {
   Alert,
   Chip,
   TextField,
-  InputAdornment,
   FormControl,
   InputLabel,
   Select,
@@ -31,7 +30,6 @@ import {
 } from '@mui/material';
 import { 
   LocalShipping, 
-  Search as SearchIcon, 
   DateRange,
   TrendingUp,
   People,
@@ -53,28 +51,22 @@ const AdminCollections = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [recording, setRecording] = useState(false);
   const [farmers, setFarmers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [formData, setFormData] = useState({
     farmer_id: '',
     liters: '',
     transporter_username: 'admin'
   });
 
-  useEffect(() => {
-    fetchDailySummary();
-    fetchFarmers();
-  }, [selectedDate]);
-
-  const fetchFarmers = async () => {
+  const fetchFarmers = useCallback(async () => {
     try {
       const res = await api.get('/farmers/');
       setFarmers(res.data || []);
     } catch (err) {
       console.error('Failed to fetch farmers:', err);
     }
-  };
+  }, []);
 
-  const fetchDailySummary = async () => {
+  const fetchDailySummary = useCallback(async () => {
     try {
       setLoading(true);
       const res = await api.get(`/collections/admin/daily-summary?collection_date=${selectedDate}`);
@@ -96,7 +88,12 @@ const AdminCollections = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedDate]);
+
+  useEffect(() => {
+    fetchDailySummary();
+    fetchFarmers();
+  }, [fetchDailySummary, fetchFarmers]);
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
@@ -121,7 +118,7 @@ const AdminCollections = () => {
       setSuccess('Collection recorded successfully!');
       setDialogOpen(false);
       setFormData({ farmer_id: '', liters: '', transporter_username: 'admin' });
-      fetchDailySummary(); // Refresh the data
+      fetchDailySummary();
       
       setTimeout(() => setSuccess(''), 3000);
     } catch (err) {
@@ -130,12 +127,6 @@ const AdminCollections = () => {
       setRecording(false);
     }
   };
-
-  const filteredFarmers = farmers.filter(farmer =>
-    farmer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    farmer.farmer_id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    farmer.phone.includes(searchTerm)
-  );
 
   if (loading) {
     return (

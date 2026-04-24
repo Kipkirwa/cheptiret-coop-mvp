@@ -76,4 +76,6 @@ class FarmerService {
   }
 }
 
-export default new FarmerService();
+// Assign instance to a variable before exporting
+const farmerService = new FarmerService();
+export default farmerService;

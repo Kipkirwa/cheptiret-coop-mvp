@@ -11,7 +11,6 @@ import {
   CalendarMonth as MonthIcon,
   Today as TodayIcon,
   AddCircleOutline as RecordIcon,
-  Phone as PhoneIcon,
   CheckCircle as CheckIcon,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
