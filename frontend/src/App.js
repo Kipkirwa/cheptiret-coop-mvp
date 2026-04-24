@@ -43,6 +43,7 @@ import DailySummary from './pages/transporters/DailySummary';
 import PrivateRoute from './components/auth/PrivateRoute';
 import NotFound from './components/common/NotFound';
 import ApiTest from './pages/tests/ApiTest';
+import NewFarmerManagement from './pages/admin/NewFarmerManagement';
  
 const theme = createTheme({
   palette: {
@@ -130,6 +131,7 @@ function App() {
                   <Route path="/admin/collections" element={
                     <PrivateRoute role="admin"><AdminCollections /></PrivateRoute>
                   } />
+                  <Route path="/admin/new-farmers" element={<PrivateRoute role="admin"><NewFarmerManagement /></PrivateRoute>} />
  
                   {/* Farmer Routes */}
                   <Route path="/farmer/portal" element={
