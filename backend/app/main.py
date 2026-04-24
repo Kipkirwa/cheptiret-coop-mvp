@@ -1,5 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.proxy_headers import ProxyHeadersMiddleware
 from app.core.config import settings
 import os
 
@@ -17,6 +18,16 @@ app = FastAPI(
     docs_url="/api/docs",
     redoc_url="/api/redoc",
 )
+
+# Add proxy headers middleware for Railway (fixes HTTPS redirects)
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
+
+# Middleware to force HTTPS scheme for all generated URLs
+@app.middleware("http")
+async def set_https_scheme(request: Request, call_next):
+    request.scope["scheme"] = "https"
+    response = await call_next(request)
+    return response
 
 # CORS - Get allowed origins from environment variable
 allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "*")
