@@ -42,6 +42,7 @@ const menuItems = {
     { text: 'Dashboard',         icon: <DashboardIcon />, path: '/admin/dashboard' },
     { text: 'Farmers',           icon: <FarmIcon />,      path: '/admin/farmers' },
     { text: 'Set Price',         icon: <SettingsIcon />,  path: '/admin/prices' },
+    { text: 'Transporters',      icon: <TruckIcon />,     path: '/admin/transporters' },
     { text: 'Broadcast SMS',     icon: <SmsIcon />,       path: '/admin/broadcast' },
     { text: 'Monthly Payments',  icon: <PaymentIcon />,   path: '/admin/payments' },
     { text: 'Collections',       icon: <TruckIcon />,     path: '/admin/collections' },
