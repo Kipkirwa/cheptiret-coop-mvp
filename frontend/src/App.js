@@ -12,6 +12,7 @@ import RoleSelect from './components/auth/RoleSelect';
 import FarmersLogin from './components/auth/FarmersLogin';
 import TransportersLogin from './components/auth/TransportersLogin';
 import AdminLogin from './components/auth/AdminLogin';
+import TransporterManagement from './pages/admin/TransporterManagement';
  
 // Layout Components
 import Navbar from './components/layout/Navbar';
@@ -131,7 +132,11 @@ function App() {
                   <Route path="/admin/collections" element={
                     <PrivateRoute role="admin"><AdminCollections /></PrivateRoute>
                   } />
-                  <Route path="/admin/new-farmers" element={<PrivateRoute role="admin"><NewFarmerManagement /></PrivateRoute>} />
+                  <Route path="/admin/transporters" element={
+                    <PrivateRoute role="admin"><TransporterManagement /></PrivateRoute>
+                  } />
+                  <Route path="/admin/new-farmers" element={
+                    <PrivateRoute role="admin"><NewFarmerManagement /></PrivateRoute>} />
  
                   {/* Farmer Routes */}
                   <Route path="/farmer/portal" element={
