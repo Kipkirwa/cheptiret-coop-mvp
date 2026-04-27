@@ -6,7 +6,6 @@ import {
   DialogActions, TextField, Switch, FormControlLabel
 } from '@mui/material';
 import { Add as AddIcon, Edit as EditIcon, Delete as DeleteIcon, Refresh as RefreshIcon } from '@mui/icons-material';
-import api from '../../services/api';
 
 const TransporterManagement = () => {
   const [transporters, setTransporters] = useState([]);
